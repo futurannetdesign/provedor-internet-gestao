@@ -1,0 +1,15 @@
+<h2>Adicionar Cliente</h2>
+    <form (ngSubmit)="addCliente()">
+        <input type="text" placeholder="Nome" [(ngModel)]="novoCliente.nome" name="nome">
+        <input type="text" placeholder="Email" [(ngModel)]="novoCliente.email" name="email">
+        <button type="submit">Adicionar</button>
+    </form>
+
+    <h2>Lista de Clientes</h2>
+    <ul>
+        <li *ngFor="let cliente of clientes">
+            {{ cliente.nome }} - {{ cliente.email }}
+            <button (click)="updateCliente(cliente)">Atualizar</button>
+            <button (click)="deleteCliente(cliente.id)">Deletar</button>
+        </li>
+    </ul>
